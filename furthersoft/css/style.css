@@ -4894,13 +4894,7 @@ hr {
 }
 
 .our-passion .cws-triangle-overlay.bottom-right {
-  clip-path: polygon(50% calc(100% - 60px), 100% calc(100% - 120px), 100% 100%);
-  -webkit-clip-path: polygon(
-    50% calc(100% - 60px),
-    100% calc(100% - 120px),
-    100% 100%
-  );
-  background: rgba(106, 155, 179, 1);
+  background: rgb(255, 255, 255);
 }
 
 .our-passion .content-column .inner-column {
