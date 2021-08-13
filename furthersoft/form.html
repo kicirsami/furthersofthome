@@ -166,15 +166,15 @@
                     <div class="subHead">
                         <span class="subs">Teklif Formu</span>
                     </div>
-                    <form class=" row ">
-                        <div class="form-group col-md-6 mt-4">
+                    <form class="row">
+                        <div class="form-group col-md-6 mt-2">
                             <label for="validationDefault01 " class="form-label ">İsim</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-user iconUser"></i>
                                 <input type="text " class="form-control name" id="validationDefault01 " placeholder="İsminizi Girin " required v-model="İsim ">
                             </div>
                         </div>
-                        <div class="form-group col-md-6 mt-4 ">
+                        <div class="form-group col-md-6 mt-2 ">
                             <label for="validationDefault02 " class="form-label ">Soyisim</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-user iconUser"></i>
@@ -203,8 +203,8 @@
                             <label for="exampleFormControlSelect1 ">İlçe Seçin</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-home iconUser"></i>
-                                <select class="custom-select " required v-model="İlçeSeçimi ">
-                                    <option value=" " disabled selected>İlçeler</option>
+                                <select class="custom-select " required v-model="İlçeSeçimi">
+                                    <option value="0" disabled>İlçeler</option>
                                     <option value="1 ">Lefkoşa</option>
                                     <option value="2 ">Girne</option>
                                     <option value="3 ">Gazimağusa</option>
@@ -228,7 +228,7 @@
                             <textarea class="form-control " id="exampleFormControlTextarea1 " rows="10 " v-model="Tanım "></textarea>
                         </div>
                         <div class="form-group col-12 col-md-12 col-lg-12 text-center ">
-                            <button onclick="showAlert() " type="submit " class="form-btn " style="vertical-align: middle; " v-on:click="Gönder() ">
+                            <button type="submit " class="form-btn " style="vertical-align: middle; " v-on:click="Gönder() ">
                             <span> Formu Gönder </span></a>
                         </button>
                         </div>
@@ -341,7 +341,7 @@
                     Soyisim: null,
                     Email: null,
                     TelefonNumarası: null,
-                    İlçeSeçimi: null,
+                    İlçeSeçimi: 0,
                     Adres: null,
                     Tanım: null
                 }
@@ -364,13 +364,6 @@
         });
 
         app.mount('#app')
-
-
-
-        function showAlert() {
-            var myText = "This can be whatever text you like! ";
-            alert(myText);
-        }
     </script>
 
 
