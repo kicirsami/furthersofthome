@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>FurtherSoft Home</title>
+    <!--VUE-CDN-->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!--Axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="plugins/revolution/css/settings.css" rel="stylesheet" type="text/css">
@@ -84,8 +88,8 @@
                                     <li class="dropdownn">
                                         <a href="contact.html"><span>İLETİŞİM</span></a>
                                     </li>
-                                    <button class="form-btn" style="vertical-align: middle; margin-left: 10px"> 
-                                        <a href="form.html"><span> Hemen Form Oluştur </span></a>
+                                    <button class="form-btn" style="vertical-align: middle; margin-left: 10px">
+                                        <a href="form.html"><span> Teklif Formu Oluştur </span></a>
                                     </button>
                                 </ul>
                             </div>
@@ -157,90 +161,121 @@
         </section>
 
         <section class="mb-5">
-            <div class="container mt-3" style="background-color: #DEE0E0;">
-                <form class="row">
-                    <div class="form-group col-md-6 mt-4">
-                        <label for="validationDefault01" class="form-label">İsim</label>
-                        <input type="text" class="form-control" id="validationDefault01" placeholder="İsminizi Girin" required>
+            <div class="container mt-3">
+                <div id="app">
+                    <div class="subHead">
+                        <span class="subs">Teklif Formu</span>
                     </div>
-                    <div class="form-group col-md-6 mt-4">
-                        <label for="validationDefault02" class="form-label">Soyisim</label>
-                        <input type="text" class="form-control" id="validationDefault02" placeholder="Soyisminizi Girin" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="validationDefault03" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="validationDefault03" placeholder="Mail Hesabınızı Girin" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="validationDefault04" class="form-label">Telefon Numarası</label>
-                        <input name="phone" type="number" class="form-control" id="phone" placeholder="Telefon Numaranızı Girin">
-                    </div>
+                    <form class=" row ">
+                        <div class="form-group col-md-6 mt-4">
+                            <label for="validationDefault01 " class="form-label ">İsim</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-user iconUser"></i>
+                                <input type="text " class="form-control name" id="validationDefault01 " placeholder="İsminizi Girin " required v-model="İsim ">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 mt-4 ">
+                            <label for="validationDefault02 " class="form-label ">Soyisim</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-user iconUser"></i>
+                                <input type="text " class="form-control name" id="validationDefault02 " placeholder="Soyisminizi Girin " required v-model="Soyisim ">
+                            </div>
 
-                    <div class="form-group col-md-12">
-                        <label for="exampleFormControlSelect1">İlçe Seçin</label>
-                        <select class="custom-select" required>
-                              <option value="">İlçeler</option>
-                              <option value="1">Lefkoşa</option>
-                              <option value="2">Girne</option>
-                              <option value="3">Gazimağusa</option>
-                              <option value="4">İskele</option>
-                              <option value="5">Güzelyurt</option>
-                              <option value="6">Lefke</option>
-                            </select>
-                        <div class="invalid-feedback">İlçe seçilmelidir</div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="validationDefault03" class="form-label">Adres</label>
-                        <input type="text" class="form-control" id="validationDefault03" placeholder="Adresinizi Girin" required>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="exampleFormControlTextarea1">Bizimle paylaşmak istediğiniz şeyleri yazınız.</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="13"></textarea>
-                    </div>
-                    <div class="form-group col-12 col-md-12 col-lg-12 text-center">
-                        <button type="submit" class="form-btn" style="vertical-align: middle;"> 
-                        <span> Formu Gönder </span></a>
-                    </button>
-                    </div>
-                </form>
+                        </div>
+                        <div class="form-group col-md-6 ">
+                            <label for="validationDefault03 " class="form-label ">E-mail</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-envelope iconUser"></i>
+                                <input type="email " class="form-control name" id="validationDefault03 " placeholder="Mail Hesabınızı Girin " required v-model="Email ">
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-6 ">
+                            <label for="validationDefault04 " class="form-label ">Telefon Numarası</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-phone iconUser"></i>
+                                <input name="phone " type="number " class="form-control name" id="phone " placeholder="Telefon Numaranızı Girin " v-model="TelefonNumarası ">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 ">
+                            <label for="exampleFormControlSelect1 ">İlçe Seçin</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-home iconUser"></i>
+                                <select class="custom-select " required v-model="İlçeSeçimi ">
+                                    <option value=" " disabled selected>İlçeler</option>
+                                    <option value="1 ">Lefkoşa</option>
+                                    <option value="2 ">Girne</option>
+                                    <option value="3 ">Gazimağusa</option>
+                                    <option value="4 ">İskele</option>
+                                    <option value="5 ">Güzelyurt</option>
+                                    <option value="6 ">Lefke</option>
+                                    </select>
+                            </div>
+                            <div class="invalid-feedback ">İlçe seçilmelidir!</div>
+                        </div>
+                        <div class="form-group col-md-12 ">
+                            <label for="validationDefault03 " class="form-label ">Adres</label>
+                            <div class="icondiv d-flex">
+                                <i class="fa fa-home iconUser"></i>
+                                <input type="text " class="form-control " id="validationDefault03 " placeholder="Adresinizi Girin " required v-model="Adres ">
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-12 ">
+                            <label for="exampleFormControlTextarea1 ">Mesajınızı yazınız.</label>
+                            <textarea class="form-control " id="exampleFormControlTextarea1 " rows="10 " v-model="Tanım "></textarea>
+                        </div>
+                        <div class="form-group col-12 col-md-12 col-lg-12 text-center ">
+                            <button onclick="showAlert() " type="submit " class="form-btn " style="vertical-align: middle; " v-on:click="Gönder() ">
+                            <span> Formu Gönder </span></a>
+                        </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <div class="auto-container">
+        <footer class="main-footer ">
+            <div class="auto-container ">
                 <!--Widgets Section-->
-                <div class="widgets-section">
-                    <div class="row">
+                <div class="widgets-section ">
+                    <div class="row ">
                         <!--Footer Column-->
-                        <div class="footer-column col-lg-8 col-md-8 col-sm-12">
-                            <div class="footer-widget about-widget">
-                                <h4 class="widget-title">FurtherSoft <span style="color: #287DA1; font-size: 20px;">Home</span></h4>
-                                <div class="widget-content text-justify">
-                                    <div class="text">"Hayatı kolaylaştırma" vizyonunu gerçekleştirmek için küresel akıllı ev endüstrisinde lider olma hedefiyle. 2020 yılında bu yana akıllı anahtar formundaki ürün şeklini kullanıma sunan ve tamamen ev otomasyonunu yerine
-                                        getirmeye kararlı FurtherSoft Home kullanıcılara akıllı ve basit bir hayat sunuyor.</div>
+                        <div class="footer-column col-lg-8 col-md-8 col-sm-12 ">
+                            <div class="footer-widget about-widget ">
+                                <h4 class="widget-title ">FurtherSoft <span style="color: #287DA1; font-size: 20px; ">Home</span></h4>
+                                <div class="widget-content text-justify ">
+                                    <div class="text ">"Hayatı kolaylaştırma " vizyonunu gerçekleştirmek için küresel akıllı ev endüstrisinde lider olma hedefiyle. 2020 yılında bu yana akıllı anahtar formundaki ürün şeklini kullanıma sunan ve tamamen ev otomasyonunu yerine
+                                        getirmeye kararlı FurtherSoft Home kullanıcılara akıllı ve basit bir hayat sunuyor.
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!--Footer Column-->
-                        <div class="footer-column col-lg-4 col-md-4 col-sm-12">
-                            <div class="footer-widget contact-widget">
-                                <h4 class="widget-title">İletişim</h4>
-                                <div class="widget-content">
-                                    <ul class="contact-list">
+                        <div class="footer-column col-lg-4 col-md-4 col-sm-12 ">
+                            <div class="footer-widget contact-widget ">
+                                <h4 class="widget-title ">İletişim</h4>
+                                <div class="widget-content ">
+                                    <ul class="contact-list ">
                                         <li>
-                                            <i class="far fa-envelope"></i>
-                                            <a href="mialto:info@furthersofthome.com">info@furthersofthome.com</a>
+                                            <i class="far fa-envelope "></i>
+                                            <a href="mialto:info@furthersofthome.com ">info@furthersofthome.com</a>
                                         </li>
                                         <li>
-                                            <i class="fa fa-phone"></i>
-                                            <a href="tel:0542 877 77 88">0542 877 77 88</a>
+                                            <i class="fa fa-phone "></i>
+                                            <a href="tel:0542 877 77 88 ">0542 877 77 88</a>
                                         </li>
                                         <li>
-                                            <div class="social-icon">
-                                                <a href="https://www.facebook.com/Furthersofthome"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="https://cy.linkedin.com/company/furthersofthome?trk=public_profile_topcard-current-company"><i class="fab fa-linkedin"></i></a>
-                                                <a href="https://www.instagram.com/furthersofthome/"><i class="fab fa-instagram"></i></a>
+                                            <div class="social-icon ">
+                                                <a href="https://www.facebook.com/Furthersofthome "><i
+                                                        class="fab fa-facebook-f "></i></a>
+                                                <a href="https://cy.linkedin.com/company/furthersofthome?trk=public_profile_topcard-current-company "><i
+                                                        class="fab fa-linkedin "></i></a>
+                                                <a href="https://www.instagram.com/furthersofthome/ "><i
+                                                        class="fab fa-instagram "></i></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -252,11 +287,11 @@
             </div>
 
             <!--Footer Bottom-->
-            <div class="footer-bottom d-md-flex align-items-center px-5 py-3">
-                <div class="d-flex justify-content-center align-items-center mb-3 mb-md-0">
-                    <a href="index.html"> <img src="./images/FSH LOGO Beyaz.png" style="max-width: 20vh" alt=""> </a>
+            <div class="footer-bottom d-md-flex align-items-center px-5 py-3 ">
+                <div class="d-flex justify-content-center align-items-center mb-3 mb-md-0 ">
+                    <a href="index.html "> <img src="./images/FSH LOGO Beyaz.png " style="max-width: 20vh " alt=" "> </a>
                 </div>
-                <p class="ml-md-auto text-center text-white" style="font-size: 12px;">&copy; 2021 | Şirketin tüm hakları Furthersoft Inc'e aittir.</p>
+                <p class="ml-md-auto text-center text-white " style="font-size: 12px; ">&copy; 2021 | Şirketin tüm hakları Furthersoft Inc'e aittir.</p>
             </div>
         </footer>
         <!-- End Main Footer -->
@@ -268,35 +303,75 @@
     </div>
     <!-- End Page Wrapper -->
 
-    <script src="/js/phone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/popup.js"></script>
+    <script src="/js/phone.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js " integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin=" anonymous
+                                    " referrerpolicy="no-referrer "></script>
+    <script src="js/jquery.js "></script>
+    <script src="js/popper.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/popup.js "></script>
     <!--Revolution Slider-->
-    <script src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="js/main-slider-script.js"></script>
+    <script src="plugins/revolution/js/jquery.themepunch.revolution.min.js "></script>
+    <script src="plugins/revolution/js/jquery.themepunch.tools.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.actions.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.carousel.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.migration.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js "></script>
+    <script src="plugins/revolution/js/extensions/revolution.extension.video.min.js "></script>
+    <script src="js/main-slider-script.js "></script>
     <!--Revolution Slider-->
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/pop-up.js"></script>
+    <script src="js/jquery.fancybox.js "></script>
+    <script src="js/owl.js "></script>
+    <script src="js/wow.js "></script>
+    <script src="js/appear.js "></script>
+    <script src="js/script.js "></script>
+    <script src="js/pop-up.js "></script>
+
+    <!--Vue-->
+    <script>
+        const app = Vue.createApp({
+            el: '#app',
+            data() {
+                return {
+                    İsim: null,
+                    Soyisim: null,
+                    Email: null,
+                    TelefonNumarası: null,
+                    İlçeSeçimi: null,
+                    Adres: null,
+                    Tanım: null
+                }
+            },
+            methods: {
+                Gönder: function() {
+                    axios.post('http://localhost:3000/form', {
+                        İsim: this.İsim,
+                        Soyisim: this.Soyisim,
+                        Email: this.Email,
+                        TelefonNumarası: this.TelefonNumarası,
+                        İlçeSeçimi: this.İlçeSeçimi,
+                        Adres: this.Adres,
+                        Tanım: this.Tanım
+                    }).then(res => {
+                        console.log(res.data)
+                    });
+                }
+            }
+        });
+
+        app.mount('#app')
 
 
 
+        function showAlert() {
+            var myText = "This can be whatever text you like! ";
+            alert(myText);
+        }
+    </script>
 
 
 </body>
