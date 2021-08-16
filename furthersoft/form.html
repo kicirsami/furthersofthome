@@ -56,7 +56,8 @@
             <div class="main-box">
                 <div class="menu-box">
                     <div class="logo">
-                        <a href="index.html"><img src="./images/FSH LOGO Beyaz.png" alt="" title="" srcset="images/logo-white-big.png 2x"></a>
+                        <a href="index.html"><img src="./images/FSH LOGO Beyaz.png" alt="" title=""
+                                srcset="images/logo-white-big.png 2x"></a>
                     </div>
 
                     <!--Nav Box-->
@@ -105,7 +106,8 @@
                 <div class="outer-box">
                     <!--Logo-->
                     <div class="logo">
-                        <a href="index.html" title="Sticky Logo"><img src="./images/FSH LOGO Renkli.png" alt="Sticky Logo"></a>
+                        <a href="index.html" title="Sticky Logo"><img src="./images/FSH LOGO Renkli.png"
+                                alt="Sticky Logo"></a>
                     </div>
 
                     <!--Nav Outer-->
@@ -123,7 +125,8 @@
             <!-- Mobile Header -->
             <div class="mobile-header">
                 <div class="logo">
-                    <a href="index.html"><img src="images/FSH LOGO Beyaz.png" alt="" title="" srcset="images/logo-white-big.png 2x"></a>
+                    <a href="index.html"><img src="images/FSH LOGO Beyaz.png" alt="" title=""
+                            srcset="images/logo-white-big.png 2x"></a>
                 </div>
 
                 <!--Nav Box-->
@@ -136,7 +139,8 @@
             <div class="mobile-menu">
                 <nav class="menu-box">
                     <div class="nav-logo">
-                        <a href="index.html"><img src="./images/FSH LOGO Beyaz.png" alt="" title="" srcset="images/logo-white-big.png 2x"></a>
+                        <a href="index.html"><img src="./images/FSH LOGO Beyaz.png" alt="" title=""
+                                srcset="images/logo-white-big.png 2x"></a>
                     </div>
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </nav>
@@ -166,19 +170,21 @@
                     <div class="subHead">
                         <span class="subs">Teklif Formu</span>
                     </div>
-                    <form class="row">
+                    <form class="row" onSubmit="return false;">
                         <div class="form-group col-md-6 mt-2">
                             <label for="validationDefault01 " class="form-label ">İsim</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-user iconUser"></i>
-                                <input type="text " class="form-control name" id="validationDefault01 " placeholder="İsminizi Girin " required v-model="İsim ">
+                                <input type="text " class="form-control name" id="validationDefault01 "
+                                    placeholder="İsminizi Girin " required v-model="İsim ">
                             </div>
                         </div>
                         <div class="form-group col-md-6 mt-2 ">
                             <label for="validationDefault02 " class="form-label ">Soyisim</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-user iconUser"></i>
-                                <input type="text " class="form-control name" id="validationDefault02 " placeholder="Soyisminizi Girin " required v-model="Soyisim ">
+                                <input type="text " class="form-control name" id="validationDefault02 "
+                                    placeholder="Soyisminizi Girin " required v-model="Soyisim ">
                             </div>
 
                         </div>
@@ -186,7 +192,8 @@
                             <label for="validationDefault03 " class="form-label ">E-mail</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-envelope iconUser"></i>
-                                <input type="email " class="form-control name" id="validationDefault03 " placeholder="Mail Hesabınızı Girin " required v-model="Email ">
+                                <input type="email " class="form-control name" id="validationDefault03 "
+                                    placeholder="Mail Hesabınızı Girin " required v-model="Email ">
                             </div>
 
                         </div>
@@ -194,7 +201,8 @@
                             <label for="validationDefault04 " class="form-label ">Telefon Numarası</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-phone iconUser"></i>
-                                <input name="phone " type="number " class="form-control name" id="phone " placeholder="Telefon Numaranızı Girin " v-model="TelefonNumarası ">
+                                <input name="phone " type="number " class="form-control name" id="phone "
+                                    placeholder="Telefon Numaranızı Girin " v-model="TelefonNumarası ">
                             </div>
 
                         </div>
@@ -211,7 +219,7 @@
                                     <option value="4 ">İskele</option>
                                     <option value="5 ">Güzelyurt</option>
                                     <option value="6 ">Lefke</option>
-                                    </select>
+                                </select>
                             </div>
                             <div class="invalid-feedback ">İlçe seçilmelidir!</div>
                         </div>
@@ -219,18 +227,21 @@
                             <label for="validationDefault03 " class="form-label ">Adres</label>
                             <div class="icondiv d-flex">
                                 <i class="fa fa-home iconUser"></i>
-                                <input type="text " class="form-control " id="validationDefault03 " placeholder="Adresinizi Girin " required v-model="Adres ">
+                                <input type="text " class="form-control " id="validationDefault03 "
+                                    placeholder="Adresinizi Girin " required v-model="Adres ">
                             </div>
 
                         </div>
                         <div class="form-group col-md-12 ">
                             <label for="exampleFormControlTextarea1 ">Mesajınızı yazınız.</label>
-                            <textarea class="form-control " id="exampleFormControlTextarea1 " rows="10 " v-model="Tanım "></textarea>
+                            <textarea class="form-control " id="exampleFormControlTextarea1 " rows="10 "
+                                v-model="Tanım "></textarea>
                         </div>
                         <div class="form-group col-12 col-md-12 col-lg-12 text-center ">
-                            <button type="button" class="form-btn " style="vertical-align: middle; " v-on:click="Gönder() ">
-                            <span> Formu Gönder </span></a>
-                        </button>
+                            <button type="submit" class="form-btn " style="vertical-align: middle; "
+                                v-on:click="Gönder() ">
+                                <span> Formu Gönder </span></a>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -245,10 +256,15 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-8 col-md-8 col-sm-12 ">
                             <div class="footer-widget about-widget ">
-                                <h4 class="widget-title ">FurtherSoft <span style="color: #287DA1; font-size: 20px; ">Home</span></h4>
+                                <h4 class="widget-title ">FurtherSoft <span
+                                        style="color: #287DA1; font-size: 20px; ">Home</span></h4>
                                 <div class="widget-content text-justify ">
-                                    <div class="text ">"Hayatı kolaylaştırma " vizyonunu gerçekleştirmek için küresel akıllı ev endüstrisinde lider olma hedefiyle. 2020 yılında bu yana akıllı anahtar formundaki ürün şeklini kullanıma sunan ve tamamen ev otomasyonunu yerine
-                                        getirmeye kararlı FurtherSoft Home kullanıcılara akıllı ve basit bir hayat sunuyor.
+                                    <div class="text ">"Hayatı kolaylaştırma " vizyonunu gerçekleştirmek için küresel
+                                        akıllı ev endüstrisinde lider olma hedefiyle. 2020 yılında bu yana akıllı
+                                        anahtar formundaki ürün şeklini kullanıma sunan ve tamamen ev otomasyonunu
+                                        yerine
+                                        getirmeye kararlı FurtherSoft Home kullanıcılara akıllı ve basit bir hayat
+                                        sunuyor.
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +288,8 @@
                                             <div class="social-icon ">
                                                 <a href="https://www.facebook.com/Furthersofthome "><i
                                                         class="fab fa-facebook-f "></i></a>
-                                                <a href="https://cy.linkedin.com/company/furthersofthome?trk=public_profile_topcard-current-company "><i
+                                                <a
+                                                    href="https://cy.linkedin.com/company/furthersofthome?trk=public_profile_topcard-current-company "><i
                                                         class="fab fa-linkedin "></i></a>
                                                 <a href="https://www.instagram.com/furthersofthome/ "><i
                                                         class="fab fa-instagram "></i></a>
@@ -289,9 +306,11 @@
             <!--Footer Bottom-->
             <div class="footer-bottom d-md-flex align-items-center px-5 py-3 ">
                 <div class="d-flex justify-content-center align-items-center mb-3 mb-md-0 ">
-                    <a href="index.html "> <img src="./images/FSH LOGO Beyaz.png " style="max-width: 20vh " alt=" "> </a>
+                    <a href="index.html "> <img src="./images/FSH LOGO Beyaz.png " style="max-width: 20vh " alt=" ">
+                    </a>
                 </div>
-                <p class="ml-md-auto text-center text-white " style="font-size: 12px; ">&copy; 2021 | Şirketin tüm hakları Furthersoft Inc'e aittir.</p>
+                <p class="ml-md-auto text-center text-white " style="font-size: 12px; ">&copy; 2021 | Şirketin tüm
+                    hakları Furthersoft Inc'e aittir.</p>
             </div>
         </footer>
         <!-- End Main Footer -->
@@ -304,7 +323,9 @@
     <!-- End Page Wrapper -->
 
     <script src="/js/phone.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js " integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin=" anonymous
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js "
+        integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w=="
+        crossorigin=" anonymous
                                     " referrerpolicy="no-referrer "></script>
     <script src="js/jquery.js "></script>
     <script src="js/popper.min.js "></script>
@@ -330,9 +351,11 @@
     <script src="js/appear.js "></script>
     <script src="js/script.js "></script>
     <script src="js/pop-up.js "></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Vue-->
     <script>
+
+
         const app = Vue.createApp({
             el: '#app',
             data() {
@@ -347,7 +370,7 @@
                 }
             },
             methods: {
-                Gönder: function() {
+                Gönder: function () {
                     axios.post('http://localhost:3000/form', {
                         İsim: this.İsim,
                         Soyisim: this.Soyisim,
@@ -358,9 +381,13 @@
                         Tanım: this.Tanım
                     }).then(res => {
                         if (res.data.veri.Adres !== null) {
-                            setTimeout(function() {
-                                alert("hello");
-                            }, 2000)
+                            setTimeout(function () {
+                                Swal.fire(
+                                    'Başarılı!',
+                                    'Teklifiniz başarılı bir şekilde gönderildi!',
+                                    'success'
+                                )
+                            }, 500)
                         }
 
                     });
