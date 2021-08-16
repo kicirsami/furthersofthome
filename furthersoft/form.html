@@ -371,26 +371,36 @@
             },
             methods: {
                 Gönder: function () {
-                    axios.post('http://localhost:3000/form', {
-                        İsim: this.İsim,
-                        Soyisim: this.Soyisim,
-                        Email: this.Email,
-                        TelefonNumarası: this.TelefonNumarası,
-                        İlçeSeçimi: this.İlçeSeçimi,
-                        Adres: this.Adres,
-                        Tanım: this.Tanım
-                    }).then(res => {
-                        if (res.data.veri.Adres !== null) {
-                            setTimeout(function () {
-                                Swal.fire(
-                                    'Başarılı!',
-                                    'Teklifiniz başarılı bir şekilde gönderildi!',
-                                    'success'
-                                )
-                            }, 500)
-                        }
+                    if ((this.TelefonNumarası.length === 10) && this.Email.includes('@')) {
 
-                    });
+
+                        axios.post('http://localhost:3000/form', {
+                            İsim: this.İsim,
+                            Soyisim: this.Soyisim,
+                            Email: this.Email,
+                            TelefonNumarası: this.TelefonNumarası,
+                            İlçeSeçimi: this.İlçeSeçimi,
+                            Adres: this.Adres,
+                            Tanım: this.Tanım
+                        }).then(res => {
+                            if (res.data.veri.Adres !== null) {
+                                setTimeout(function () {
+                                    Swal.fire(
+                                        'Başarılı!',
+                                        'Teklifiniz başarılı bir şekilde gönderildi!',
+                                        'success'
+                                    )
+                                }, 500)
+                            }
+
+                        });
+                    } else {
+                        Swal.fire(
+                            'Oops...',
+                            'Something went wrong!',
+                            'error'
+                        )
+                    }
                 }
             }
         });
