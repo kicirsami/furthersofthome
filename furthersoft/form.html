@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FurtherSoft Home</title>
+    <title>Teklif Formu</title>
     <!--VUE-CDN-->
     <script src="https://unpkg.com/vue@next"></script>
     <!--Axios-->
@@ -357,9 +357,11 @@
                         Adres: this.Adres,
                         Tanım: this.Tanım
                     }).then(res => {
-                        if(res.data.veri.Adres !== null){
-                            setTimeout(function(){alert("hello");}, 2000)   
-                            }
+                        if (res.data.veri.Adres !== null) {
+                            setTimeout(function() {
+                                alert("hello");
+                            }, 2000)
+                        }
 
                     });
                 }
